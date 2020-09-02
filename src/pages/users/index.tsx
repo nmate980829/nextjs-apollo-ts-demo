@@ -1,16 +1,16 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
-
+import React from 'react'
+import { Layout } from '../../components/Layout'
+import { List } from '../../components/List'
 import { User } from '../../interfaces'
 import { sampleUserData } from '../../utils/sample-data'
-import Layout from '../../components/Layout'
-import List from '../../components/List'
 
 type Props = {
   items: User[]
 }
 
-const WithStaticProps = ({ items }: Props) => (
+export const WithStaticProps = ({ items }: Props) => (
   <Layout title="Users List | Next.js + TypeScript Example">
     <h1>Users List</h1>
     <p>
@@ -33,5 +33,3 @@ export const getStaticProps: GetStaticProps = async () => {
   const items: User[] = sampleUserData
   return { props: { items } }
 }
-
-export default WithStaticProps

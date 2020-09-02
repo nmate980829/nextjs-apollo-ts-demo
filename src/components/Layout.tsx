@@ -1,13 +1,13 @@
-import React, { ReactNode } from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
+import Link from 'next/link'
+import React, { ReactNode } from 'react'
 
 type Props = {
   children?: ReactNode
   title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+export const Layout = ({ children, title = 'This is the default title' }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -33,9 +33,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     {children}
     <footer>
       <hr />
-      <span>I'm here to stay (Footer)</span>
+      <span>I am here to stay (Footer)</span>
     </footer>
   </div>
 )
-
-export default Layout
